@@ -139,6 +139,11 @@ public class Login extends javax.swing.JFrame {
                 dropMouseClicked(evt);
             }
         });
+        drop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dropActionPerformed(evt);
+            }
+        });
         jPanel1.add(drop);
         drop.setBounds(150, 210, 100, 40);
 
@@ -170,13 +175,15 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
                 String a = "Cutomer";
                 String b = "Pharmacist";
-                String dropDownValue = (String) drop.getSelectedItem();
-                String choice = dropDownValue;
+//                String dropDownValue = drop.getSelectedItem().toString();
+//                String choice = dropDownValue;
 //                
-        if (choice.equals(a) == true) {
-            new DCustomer().setVisible(true);
+        if ((drop.getSelectedItem().toString()).equals("Customer")) {
+//            JOptionPane.showMessageDialog(null, "Customer!");
+             new DCustomer().setVisible(true);
         }else{
-            new Dashboard().setVisible(true);
+//            JOptionPane.showMessageDialog(null, "Pharmacist");
+            new DPharmacist().setVisible(true);
         }
         
         
@@ -187,7 +194,7 @@ public class Login extends javax.swing.JFrame {
 //                new DCustomer().setVisible(true);
 
             } else if (!UserName.contains(UsernameTextField.getText()) && Passwords.contains(PasswordTextField.getText())) {
-                JOptionPane.showMessageDialog(null, "Wrong Password/Username");
+//                JOptionPane.showMessageDialog(null, "Wrong Password/Username");
                 UsernameTextField.setText("");
                 PasswordTextField.setText("");
                 UsernameTextField.requestFocus();
@@ -196,7 +203,7 @@ public class Login extends javax.swing.JFrame {
                 home.setVisible(true);
 
             } else if (UserName.contains(UsernameTextField.getText()) && !Passwords.contains(PasswordTextField.getText())) {
-                JOptionPane.showMessageDialog(null, "Wrong Password/Username");
+//                JOptionPane.showMessageDialog(null, "Wrong Password/Username");
                 UsernameTextField.setText("");
                 PasswordTextField.setText("");
                 UsernameTextField.requestFocus();
@@ -205,7 +212,7 @@ public class Login extends javax.swing.JFrame {
                 home.setVisible(true);
                
             } else {
-                JOptionPane.showMessageDialog(null, "Wrong Username && Password !!!!");
+//                JOptionPane.showMessageDialog(null, "Wrong Username && Password !!!!");
                 UsernameTextField.setText("");
                 PasswordTextField.setText("");
                 UsernameTextField.requestFocus();
@@ -229,6 +236,10 @@ public class Login extends javax.swing.JFrame {
     private void dropMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dropMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_dropMouseClicked
+
+    private void dropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dropActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dropActionPerformed
 
     /**
      * @param args the command line arguments

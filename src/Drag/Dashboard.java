@@ -188,7 +188,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void RemoveMedicineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RemoveMedicineMouseClicked
         // TODO add your handling code here:
-        HeadAche_Med headache= new HeadAche_Med();
+        DPharmacist headache= new DPharmacist();
         headache.setVisible(true);
         dispose();
 
@@ -196,7 +196,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void addMedicine_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMedicine_btnMouseClicked
         // TODO add your handling code here:
-        HeadAche_Med headache= new HeadAche_Med();
+        DPharmacist headache= new DPharmacist();
         headache.setVisible(true);
         dispose();
     }//GEN-LAST:event_addMedicine_btnMouseClicked
