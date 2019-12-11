@@ -20,16 +20,16 @@ import javax.swing.JTextField;
  * @author ajocme_sd2022
  */
 public class Register extends javax.swing.JFrame {
+
     private ArrayList<Account> accounts;
-     private ArrayList<String> age;
-   
+    private ArrayList<String> age;
 
     /**
      * Creates new form Register
      */
     public Register() {
         initComponents();
-        
+
     }
 
     /**
@@ -215,17 +215,17 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_registerageActionPerformed
 
     private void login_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_login_btnMouseClicked
-       Login login = new Login();
-       dispose();
-       login.setVisible(true);
+        Login login = new Login();
+        dispose();
+        login.setVisible(true);
     }//GEN-LAST:event_login_btnMouseClicked
 
     private void registerfullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerfullnameActionPerformed
-    
+
     }//GEN-LAST:event_registerfullnameActionPerformed
 
     private void registerpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerpasswordActionPerformed
-       
+
     }//GEN-LAST:event_registerpasswordActionPerformed
 
     private void RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterMouseClicked
@@ -236,12 +236,12 @@ public class Register extends javax.swing.JFrame {
             String myUrl = "jdbc:mysql://localhost/PharmacyApp";
             Class.forName(myDriver);
             Connection conn = DriverManager.getConnection(myUrl, "root", "");
-            
+
             // the mysql insert statement
             //register is the register name for the table in the database
             String query = " insert into register(fullname,username,age,password,address)"
                     + " values (?,?,?,?,?)";
-            
+
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setString(1, registerfullname.getText());
@@ -249,21 +249,22 @@ public class Register extends javax.swing.JFrame {
             preparedStmt.setString(3, registerage.getText());
             preparedStmt.setString(4, registerpassword.getText());
             preparedStmt.setString(5, registeraddress.getText());
-            
+
             // execute the preparedstatement
             preparedStmt.execute();
-            
+
             conn.close();
-             String age = registerage.getText();
-       int edad = Integer.parseInt(age);    
-       if ( edad < 18) {
-          JOptionPane.showMessageDialog(null, "Sorry!Underage are not allowed to register!");
-        } else {
-           Login login = new Login();
-           dispose();
-           login.setVisible(true);
-           JOptionPane.showMessageDialog(this, "This data is Saved!");
-       }
+            String age = registerage.getText();
+            int edad = Integer.parseInt(age);
+        
+            if (edad < 18) {
+                JOptionPane.showMessageDialog(null, "Sorry!Underage are not allowed to register!");
+            } else {
+                Login login = new Login();
+                dispose();
+                login.setVisible(true);
+                JOptionPane.showMessageDialog(this, "This data is Saved!");
+            }
         } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
@@ -272,7 +273,7 @@ public class Register extends javax.swing.JFrame {
 //            dispose();
 //            login.setVisible(true);
 //           
-          
+
     }//GEN-LAST:event_RegisterMouseClicked
 
     private void jLabelLogin2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogin2MouseClicked
